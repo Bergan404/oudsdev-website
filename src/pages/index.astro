@@ -1,8 +1,19 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import InitialLoader from "../components/InitialLoader.astro";
+
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Products from "../components/Products.astro";
+import CTA from "../components/CTA.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="OUDS">
+	<!-- <InitialLoader /> -->
+	<!-- <Welcome /> -->
+	<Hero />
+	<Services />
+	<Products />
+	<CTA />
 </Layout>
