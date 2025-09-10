@@ -1,8 +1,9 @@
 body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-family: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
-    letter-spacing: var(--tracking-normal)
+  background-color: #1a1a1a;
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", sans-serif;
+  letter-spacing: var(--tracking-normal);
 }
 
 .logo {
@@ -12,12 +13,34 @@ body {
   transition: filter 300ms;
 }
 
+.nav_logo {
+  transition: 0.2s all ease-in-out;
+}
+
+.nav_logo:hover {
+  filter: drop-shadow(0 0 1em hsl(var(--secondary)));
+}
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.transition_font_hover {
+  transition: 0.2s all ease-in-out;
+}
+
+.transition_font_hover:hover {
+  background: -webkit-linear-gradient(
+    left,
+    hsl(var(--primary)),
+    hsl(var(--secondary))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes logo-spin {
@@ -42,4 +65,19 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+.navigation_design {
+  background-color: #3e3e3e57;
+  border: 1px solid #393939;
+}
+
+.button_designs_one {
+  background-color: hsl(var(--secondary));
+}
+
+.hero_full_logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
 }

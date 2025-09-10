@@ -1,0 +1,156 @@
+---
+// HeroSection.astro
+import { ArrowRight, Code, Zap, Globe } from "@lucide/astro";
+
+import circuitBackground from "../assets/circut_background_lower.png";
+import oudsFull from "../assets/OUDS_full.svg";
+---
+
+<section
+  id="home"
+  class="relative min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8"
+  style={{
+    backgroundImage: `url(${circuitBackground.src})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  }}
+>
+  <div class="max-w-7xl mx-auto text-center">
+    <!-- Main heading -->
+    <div class="space-y-6 animate-fade-in">
+      <!-- <h1
+        class="text-4xl sm:text-6xl lg:text-7xl font-heading font-bold text-foreground leading-tight"
+      >
+        <span
+          class="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient"
+        >
+          OUDS
+        </span>
+        <br />
+        <span class="text-foreground">Development</span>
+      </h1> -->
+      <img src={oudsFull.src} class="hero_full_logo" alt="OUDS Development" />
+
+      <p
+        class="text-xl sm:text-2xl text-foreground/80 max-w-4xl mx-auto leading-relaxed animate-fade-in-delay"
+      >
+        We build <span class="text-primary font-semibold"
+          >cutting-edge applications</span
+        > and provide
+        <span class="text-accent font-semibold">
+          professional web solutions</span
+        > crafted from the ground up. Where innovation meets excellence.
+      </p>
+    </div>
+
+    <!-- Feature highlights -->
+    <div
+      class="flex flex-wrap justify-center gap-6 mt-12 mb-12 animate-fade-in-delay-2"
+    >
+      <div
+        class="flex items-center gap-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform"
+      >
+        <Code class="text-primary" size={20} />
+        <span class="text-foreground font-medium">Custom Applications</span>
+      </div>
+      <div
+        class="flex items-center gap-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform"
+      >
+        <Globe class="text-primary" size={20} />
+        <span class="text-foreground font-medium">Web Solutions</span>
+      </div>
+      <div
+        class="flex items-center gap-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform"
+      >
+        <Zap class="text-primary" size={20} />
+        <span class="text-foreground font-medium">Tech Excellence</span>
+      </div>
+    </div>
+
+    <!-- CTA buttons -->
+    <div
+      class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-3"
+    >
+      <button
+        class="group bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 hover:bg-primary/90 transition-all hover:scale-105 active:scale-95"
+      >
+        Start Your Project
+        <ArrowRight
+          class="group-hover:translate-x-1 transition-transform"
+          size={20}
+        />
+      </button>
+
+      <button
+        class="border border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-all hover:scale-105 active:scale-95"
+      >
+        View Our Work
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Gradient text animation */
+  .animate-gradient {
+    background-size: 200% 100%;
+    animation: gradientMove 3s ease infinite;
+  }
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Reusable fade-in delays */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+  }
+  .animate-fade-in-delay {
+    animation: fadeIn 0.8s ease 0.2s forwards;
+    opacity: 0;
+  }
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.8s ease 0.4s forwards;
+    opacity: 0;
+  }
+  .animate-fade-in-delay-3 {
+    animation: fadeIn 0.8s ease 0.6s forwards;
+    opacity: 0;
+  }
+  .animate-fade-in-delay-4 {
+    animation: fadeIn 0.8s ease 1s forwards;
+    opacity: 0;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth bounce for scroll indicator */
+  .animate-bounce-slow {
+    animation: bounceSlow 2s infinite;
+  }
+  @keyframes bounceSlow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(12px);
+    }
+  }
+</style>
