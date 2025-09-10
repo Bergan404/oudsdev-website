@@ -1,3 +1,17 @@
+---
+import Navigation from "../components/Navigation.astro"
+
+import "../styles/global.css";
+import "../styles/App.css";
+// import "../styles/index.css";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,10 +19,19 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+
+		<script defer src="../scripts/nav.js" type="text/javascript"></script>
 	</head>
-	<body>
-		<slot />
+	<body style="isolation: isolate;">
+		<div id="root">
+			<div class="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+				<div class="relative z-10">
+					<Navigation />
+					<slot />
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
 

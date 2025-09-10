@@ -1,0 +1,82 @@
+/* global.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap");
+/* Tailwind core layers */
+@import "tailwindcss";
+
+/* Import Google Fonts */
+
+@layer base {
+  :root {
+    /* OUDS Tech-Forward Color Palette */
+    --primary: 39, 27%, 69%;
+    --secondary: 38, 21%, 45%;
+    --highlights: 210, 48%, 65%;
+    --background: 224 100% 4%;
+    --foreground: 210 20% 94%;
+    --card: 224 71% 4%;
+    --card-foreground: 210 20% 94%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 20% 94%;
+    /* --primary: 237 89% 61%; */
+    --primary-foreground: 0 0% 100%;
+    /* --secondary: 217 33% 17%; */
+    --secondary-foreground: 210 20% 94%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 11% 65%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 237 89% 61%;
+    --font-sans: Inter, sans-serif;
+    --font-heading: Space Grotesk, sans-serif;
+    --font-mono: "Courier New", monospace;
+  }
+
+  .dark {
+    --primary: #c6b79b;
+    --secondary: #8c7a5b;
+    --background: 222.22 47.37% 11.18%;
+    --foreground: 216 12.19% 83.92%;
+    --card: 217.24 32.58% 17.45%;
+    --card-foreground: 216 12.19% 83.92%;
+    --popover: 217.24 32.58% 17.45%;
+    --popover-foreground: 216 12.19% 83.92%;
+    --primary: 158.11 64.37% 51.57%;
+    --primary-foreground: 222.22 47.37% 11.18%;
+    --secondary: 217.78 23.08% 22.94%;
+    --secondary-foreground: 240 5.03% 64.9%;
+    --muted: 217.24 32.58% 17.45%;
+    --muted-foreground: 220 8.94% 46.08%;
+    --accent: 216.92 19.12% 26.67%;
+    --accent-foreground: 240 5.03% 64.9%;
+    --destructive: 0 84.24% 60.2%;
+    --destructive-foreground: 222.22 47.37% 11.18%;
+    --border: 215 13.79% 34.12%;
+    --input: 215 13.79% 34.12%;
+    --ring: 158.11 64.37% 51.57%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    letter-spacing: 0em;
+  }
+}
+
+/* Extra animations */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

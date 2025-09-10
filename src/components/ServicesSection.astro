@@ -1,0 +1,137 @@
+---
+import { Smartphone, Globe, Zap, Shield, Code2, Palette } from "@lucide/astro";
+
+const services = [
+  {
+    icon: Smartphone,
+    title: "Custom Applications",
+    description:
+      "Native mobile apps and web applications built with cutting-edge technology and modern frameworks.",
+    features: [
+      "React Native & Flutter",
+      "Progressive Web Apps",
+      "Real-time functionality",
+      "Cloud integration",
+    ],
+    gradient: "from-blue-500 to-purple-600",
+  },
+  {
+    icon: Globe,
+    title: "Web Development",
+    description:
+      "Professional websites and web platforms designed for performance, scalability, and user experience.",
+    features: [
+      "Responsive design",
+      "SEO optimization",
+      "Fast loading speeds",
+      "Modern frameworks",
+    ],
+    gradient: "from-purple-500 to-pink-600",
+  },
+  {
+    icon: Shield,
+    title: "Hosting & Security",
+    description:
+      "Secure, reliable hosting solutions with enterprise-grade security and 99.9% uptime guarantee.",
+    features: [
+      "SSL certificates",
+      "DDoS protection",
+      "Daily backups",
+      "24/7 monitoring",
+    ],
+    gradient: "from-green-500 to-teal-600",
+  },
+];
+
+const extraServices = [
+  { icon: Code2, title: "API Development", description: "RESTful and GraphQL APIs" },
+  { icon: Palette, title: "UI/UX Design", description: "Modern, intuitive interfaces" },
+  { icon: Zap, title: "Performance Optimization", description: "Lightning-fast applications" },
+];
+---
+
+<section id="services" class="py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-5xl font-heading font-bold text-foreground mb-6">
+        Our
+        <span
+          class="text_design_gradient animate-gradient"
+        >
+          Services
+        </span>
+      </h2>
+      <p class="text-xl text-foreground/70 max-w-3xl mx-auto">
+        We deliver comprehensive digital solutions tailored to your business needs,
+        from concept to deployment and beyond.
+      </p>
+    </div>
+
+    <!-- Services grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <div
+          class="group relative hover:scale-105 hover:-translate-y-1 transition-transform"
+        >
+          <div
+            class="focused_items h-full bg-card/50 backdrop-blur-sm border rounded-2xl p-8 
+                   hover:border-primary/50 transition-all duration-300"
+          >
+            <!-- Icon -->
+            <div class={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.gradient} mb-6`}>
+              <service.icon class="text-white" size={32} />
+            </div>
+
+            <!-- Content -->
+            <h3 class="text-2xl font-heading font-bold text-foreground mb-4">
+              {service.title}
+            </h3>
+            <p class="text-foreground/70 mb-6 leading-relaxed">{service.description}</p>
+
+            <!-- Features -->
+            <ul class="space-y-2">
+              {service.features.map((feature, i) => (
+                <li class="flex items-center gap-3 text-foreground/80">
+                  <div class="w-1.5 h-1.5 bg-primary rounded-full" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Extra services -->
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {extraServices.map((item, index) => (
+        <div
+          class="focused_items backdrop-blur-sm border rounded-xl p-6 text-center 
+                 hover:border-primary/30 transition-all hover:scale-105 active:scale-95"
+        >
+          <div class="inline-flex p-3 rounded-lg bg-primary/10 mb-4">
+            <item.icon class="text-primary" size={24} />
+          </div>
+          <h4 class="font-heading font-semibold text-foreground mb-2">{item.title}</h4>
+          <p class="text-sm text-foreground/60">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* fade + slide animation */
+  .fade-slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.6s ease forwards;
+  }
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
