@@ -104,6 +104,19 @@ body {
   }
 }
 
+.shadow_bottom_overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(26, 26, 26, 1) 0%,
+    rgba(26, 26, 26, 0) 30%
+  );
+}
+
 .card {
   padding: 2em;
 }
