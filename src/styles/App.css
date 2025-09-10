@@ -81,3 +81,21 @@ body {
   margin-right: auto;
   width: 500px;
 }
+
+.text_design_gradient {
+  background: -webkit-linear-gradient(
+    left,
+    hsl(var(--primary)),
+    hsl(var(--secondary))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text_primary {
+  color: hsl(var(--primary));
+}
+
+.focused_items {
+  background-color: #3e3e3e57;
+  border: 1px solid #393939;
+}
