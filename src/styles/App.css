@@ -157,3 +157,16 @@ body {
   background-color: #3e3e3e57;
   border: 1px solid #393939;
 }
+.focused_items_w_hover_card {
+  background-color: #3e3e3e57;
+  border: 1px solid #393939;
+}
+
+.focused_items_w_hover_card:hover {
+  background-color: hsl(var(--secondary), 30%);
+  border: 1px solid hsl(var(--primary));
+}
+
+.list_items div {
+  background-color: hsl(var(--primary));
+}
