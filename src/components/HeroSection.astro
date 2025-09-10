@@ -24,33 +24,34 @@ import oudsFull from "../assets/OUDS_full.svg";
       <p
         class="text-xl sm:text-2xl text-foreground/80 max-w-4xl mx-auto leading-relaxed animate-fade-in-delay"
       >
-        We build <span class="text_design_gradient text-primary font-semibold"
+        We build <span
+          class="text_design_gradient text-primary font-semibold animate-gradient"
           >cutting-edge applications</span
         > and provide
-        <span class="text_design_gradient text-accent font-semibold">
+        <span
+          class="text_design_gradient text-accent font-semibold animate-gradient"
+        >
           professional web solutions</span
         > crafted from the ground up. Where innovation meets excellence.
       </p>
     </div>
 
     <!-- Feature highlights -->
-    <div
-      class="flex flex-wrap justify-center gap-6 mt-12 mb-12 animate-fade-in-delay-2"
-    >
+    <div class="flex flex-wrap justify-center gap-6 mt-12 mb-12">
       <div
-        class="focused_items flex items-center gap-3 backdrop-blur-sm border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform cursor-pointer"
+        class="focused_items flex items-center gap-3 backdrop-blur-sm border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform cursor-pointer animate-fade-in-delay-2"
       >
         <Code class="text_primary" size={20} />
         <span class="text-foreground font-medium">Custom Applications</span>
       </div>
       <div
-        class="focused_items flex items-center gap-3 backdrop-blur-sm border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform cursor-pointer"
+        class="focused_items flex items-center gap-3 backdrop-blur-sm border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform cursor-pointer animate-fade-in-delay-2"
       >
         <Globe class="text_primary" size={20} />
         <span class="text-foreground font-medium">Web Solutions</span>
       </div>
       <div
-        class="focused_items flex items-center gap-3 backdrop-blur-sm border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform cursor-pointer"
+        class="focused_items flex items-center gap-3 backdrop-blur-sm border rounded-lg px-6 py-3 hover:scale-105 hover:-translate-y-1 transition-transform cursor-pointer animate-fade-in-delay-2"
       >
         <Zap class="text_primary" size={20} />
         <span class="text-foreground font-medium">Tech Excellence</span>
@@ -58,11 +59,9 @@ import oudsFull from "../assets/OUDS_full.svg";
     </div>
 
     <!-- CTA buttons -->
-    <div
-      class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-3"
-    >
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <button
-        class="group button_designs_one px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 hover:bg-primary/90 transition-all hover:scale-105 active:scale-95"
+        class="group button_designs_one px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 animate-fade-in-delay-3"
       >
         Start Your Project
         <ArrowRight
@@ -71,75 +70,11 @@ import oudsFull from "../assets/OUDS_full.svg";
         />
       </button>
 
-      <button
-        class="border border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-all hover:scale-105 active:scale-95"
+      <!-- <button
+        class="border focused_items backdrop-blur-sm px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-all hover:scale-105 active:scale-95 animate-fade-in-delay-3"
       >
         View Our Work
-      </button>
+      </button> -->
     </div>
   </div>
 </section>
-
-<style>
-  /* Gradient text animation */
-  .animate-gradient {
-    background-size: 200% 100%;
-    animation: gradientMove 3s ease infinite;
-  }
-  @keyframes gradientMove {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  /* Reusable fade-in delays */
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease forwards;
-  }
-  .animate-fade-in-delay {
-    animation: fadeIn 0.8s ease 0.2s forwards;
-    opacity: 0;
-  }
-  .animate-fade-in-delay-2 {
-    animation: fadeIn 0.8s ease 0.4s forwards;
-    opacity: 0;
-  }
-  .animate-fade-in-delay-3 {
-    animation: fadeIn 0.8s ease 0.6s forwards;
-    opacity: 0;
-  }
-  .animate-fade-in-delay-4 {
-    animation: fadeIn 0.8s ease 1s forwards;
-    opacity: 0;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Smooth bounce for scroll indicator */
-  .animate-bounce-slow {
-    animation: bounceSlow 2s infinite;
-  }
-  @keyframes bounceSlow {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(12px);
-    }
-  }
-</style>

@@ -5,8 +5,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const menuIcon = document.getElementById("menu-icon");
   const closeIcon = document.getElementById("close-icon");
 
-  console.log(nav); // should not be null anymore
-
   // Animate nav slide down on load
   nav.classList.remove("-translate-y-full");
   nav.classList.add("translate-y-0");
