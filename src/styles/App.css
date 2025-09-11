@@ -193,6 +193,22 @@ body {
   width: 100px;
 }
 
+.icon_bg {
+  background-color: hsl(var(--secondary));
+}
+
+.icon_gradient_bg {
+  background: -webkit-linear-gradient(
+    left,
+    hsl(var(--primary)),
+    hsl(var(--secondary))
+  );
+}
+
+/* .icon_gradient_bg svg {
+  color: #1a1a1a;
+} */
+
 @media screen and (max-width: 600px) {
   #home {
     background-attachment: unset !important;
