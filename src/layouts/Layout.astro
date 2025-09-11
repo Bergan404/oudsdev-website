@@ -1,6 +1,7 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import AnimatedBackground from "../components/AnimatedBackground.astro";
+import Footer from "../components/Footer.astro";
 
 import "../styles/global.css";
 import "../styles/App.css";
@@ -31,9 +32,11 @@ const { title } = Astro.props;
       <div
         class="relative min-h-screen bg-background text-foreground overflow-x-hidden"
       >
+        <!-- <AnimatedBackground /> -->
         <div class="relative z-10">
           <Navigation />
           <slot />
+          <Footer />
         </div>
       </div>
     </div>

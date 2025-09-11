@@ -1,0 +1,140 @@
+---
+import oudsFull from "../assets/OUDS_logo.svg";
+import oudsLogo from "../assets/OUDS.svg";
+
+import { Mail, Github, Linkedin, Twitter } from "@lucide/astro";
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Mail, href: "mailto:hello@ouds.dev", label: "Email" },
+];
+
+const footerSections = [
+  {
+    title: "Services",
+    links: [
+      { name: "Custom Applications", href: "#services" },
+      { name: "Web Development", href: "#services" },
+      { name: "Hosting & Security", href: "#services" },
+      { name: "API Development", href: "#services" },
+    ],
+  },
+  //   {
+  //     title: "Products",
+  //     links: [
+  //       { name: "TaskMaster Pro", href: "#products" },
+  //       { name: "CloudSync", href: "#products" },
+  //       { name: "AnalyticsPro", href: "#products" },
+  //       { name: "View All", href: "#products" },
+  //     ],
+  //   },
+  {
+    title: "Company",
+    links: [
+      { name: "About Us", href: "#about" },
+      { name: "Contact", href: "#contact" },
+      //   { name: "Career", href: "#" },
+      //   { name: "Blog", href: "#" },
+    ],
+  },
+];
+---
+
+<footer
+  class="navigation_design relative bg-card/30 backdrop-blur-sm border-t border-border"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <!-- Brand -->
+      <div class="lg:col-span-3 fade-slide-up">
+        <div class="flex items-center gap-3 mb-6">
+          <img src={oudsFull.src} class="footer_logo" alt="OUDS Development" />
+        </div>
+
+        <p class="text-foreground/70 mb-6 max-w-md">
+          Building the future of digital experiences through innovative
+          applications and cutting-edge web solutions. Where technology meets
+          creativity.
+        </p>
+
+        <!-- Social links -->
+        <div class="flex gap-4">
+          {
+            socialLinks.map((social) => (
+              <a
+                href={social.href}
+                aria-label={social.label}
+                class="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-transform transform hover:-translate-y-1 hover:scale-110 active:scale-95"
+              >
+                <social.icon size={20} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Footer sections -->
+      {
+        footerSections.map((section) => (
+          <div class="fade-slide-up">
+            <h4 class="font-heading font-semibold text-foreground mb-4">
+              {section.title}
+            </h4>
+            <ul class="space-y-3">
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-foreground/60 hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-border mt-12 pt-8 fade-slide-up">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-foreground/60 text-sm">
+          © {currentYear} OUDS Development. All rights reserved.
+        </p>
+
+        <div class="flex gap-6 text-sm">
+          <a
+            href="#"
+            class="text-foreground/60 hover:text-primary transition-colors"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="#"
+            class="text-foreground/60 hover:text-primary transition-colors"
+          >
+            Terms of Service
+          </a>
+          <a
+            href="#"
+            class="text-foreground/60 hover:text-primary transition-colors"
+          >
+            Cookies
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative line -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"
+  >
+  </div>
+</footer>

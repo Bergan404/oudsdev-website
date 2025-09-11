@@ -189,6 +189,10 @@ body {
   background-color: hsl(var(--primary));
 }
 
+.footer_logo {
+  width: 100px;
+}
+
 @media screen and (max-width: 600px) {
   #home {
     background-attachment: unset !important;

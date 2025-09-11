@@ -1,114 +1,50 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+<div class="absolute inset-0 -z-10 overflow-hidden">
+  <div class="blob blob-left" id="blob-left"></div>
+  <div class="blob blob-right" id="blob-right"></div>
+</div>
 
-interface Particle {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  speed: number;
-  opacityDuration: number;
-  opacityDelay: number;
-}
+<style>
+  .blob {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 40vw;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.5;
+    z-index: -1;
+    background-color: #c6b79b;
+  }
 
-export function AnimatedBackground() {
-  const [particles, setParticles] = useState<Particle[]>([]);
+  .blob-left {
+    left: -40vw;
+    background: radial-gradient(circle at center, #8c7a5b7a, #8c7a5b7a);
+  }
 
-  // Generate particles once on mount + window resize
-  useEffect(() => {
-    const generateParticles = () => {
-      const newParticles: Particle[] = [];
-      for (let i = 0; i < 50; i++) {
-        newParticles.push({
-          id: i,
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
-          size: Math.random() * 4 + 1,
-          speed: Math.random() * 2 + 0.5,
-          opacityDuration: 2 + Math.random() * 2,
-          opacityDelay: Math.random() * 2,
-        });
-      }
-      setParticles(newParticles);
-    };
+  .blob-right {
+    right: -40vw;
+    background: radial-gradient(circle at center, #8c7a5b7a, #8c7a5b7a);
+  }
 
-    generateParticles();
-    window.addEventListener('resize', generateParticles);
-    return () => window.removeEventListener('resize', generateParticles);
-  }, []);
+  @keyframes blob {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
 
-  // Animate particle positions with requestAnimationFrame
-  useEffect(() => {
-    let frame: number;
-    const animate = () => {
-      setParticles(prev =>
-        prev.map(particle => {
-          let newY = particle.y - particle.speed;
-          if (newY < -10) newY = window.innerHeight + 10;
-          return {
-            ...particle,
-            x: particle.x + Math.sin(particle.y * 0.01) * 0.5,
-            y: newY,
-          };
-        })
-      );
-      frame = requestAnimationFrame(animate);
-    };
-    frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
-  }, []);
+  /* utility for staggered animation */
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
 
-  return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {/* Animated gradient background */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20"
-        animate={{
-          background: [
-            'linear-gradient(135deg, hsl(237 89% 61% / 0.1), hsl(224 71% 4%), hsl(262 83% 58% / 0.1))',
-            'linear-gradient(225deg, hsl(262 83% 58% / 0.15), hsl(224 71% 4%), hsl(237 89% 61% / 0.1))',
-            'linear-gradient(315deg, hsl(237 89% 61% / 0.1), hsl(224 71% 4%), hsl(262 83% 58% / 0.15))',
-          ],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-      />
-
-      {/* Floating particles */}
-      {particles.map(particle => (
-        <motion.div
-          key={particle.id}
-          className="absolute bg-primary/30 rounded-full blur-sm"
-          style={{
-            width: particle.size,
-            height: particle.size,
-            left: particle.x,
-            top: particle.y,
-          }}
-          animate={{
-            opacity: [0.3, 0.8, 0.3],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: particle.opacityDuration,
-            repeat: Infinity,
-            delay: particle.opacityDelay,
-          }}
-        />
-      ))}
-
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
-          backgroundSize: '40px 40px',
-        }}
-      />
-    </div>
-  );
-}
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+</style>
