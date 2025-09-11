@@ -1,0 +1,200 @@
+---
+import { Mail, Phone, Calendar, Send } from "@lucide/astro";
+---
+
+<section id="contact" class="py-24 bg-background">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-16 fade-slide-up">
+      <h2
+        class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
+      >
+        Get In
+        <span class="text_design_gradient"> Touch </span>
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        Ready to transform your digital presence? Let's discuss your project and
+        explore how we can help you achieve your goals.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div
+        class="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 fade-slide-up"
+      >
+        <h3
+          class="text-2xl font-semibold text-foreground flex items-center mb-6"
+        >
+          <Send class="w-6 h-6 mr-3 text-primary" />
+          Send Us a Message
+        </h3>
+        <form class="space-y-6">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label for="name" class="font-medium">Full Name *</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="John Doe"
+                required
+                class="w-full border border-border/50 rounded-md px-4 py-3 focus:border-primary"
+              />
+            </div>
+            <div class="space-y-2">
+              <label for="email" class="font-medium">Email Address *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="john@company.com"
+                required
+                class="w-full border border-border/50 rounded-md px-4 py-3 focus:border-primary"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="company" class="font-medium">Company Name</label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              placeholder="Your Company"
+              class="w-full border border-border/50 rounded-md px-4 py-3 focus:border-primary"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label for="message" class="font-medium">Project Details *</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us about your project, goals, and how we can help..."
+              rows="6"
+              required
+              class="w-full border border-border/50 rounded-md px-4 py-3 focus:border-primary resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 text-lg rounded-lg font-semibold flex justify-center items-center"
+          >
+            Send Message
+            <Send class="ml-2 h-5 w-5" />
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="space-y-8 fade-slide-up">
+        <div>
+          <h3 class="text-2xl font-semibold text-foreground mb-6">
+            Let's Start a Conversation
+          </h3>
+          <p class="text-muted-foreground leading-relaxed mb-8">
+            Whether you need a new website, want to optimize your existing
+            digital presence, or are interested in our productivity tools, we're
+            here to help. Get in touch and let's discuss how we can bring your
+            vision to life.
+          </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="space-y-4">
+          <!-- Email Card -->
+          <div
+            class="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-colors"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+              >
+                <Mail class="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-foreground mb-1">Email Us</h4>
+                <p class="text-muted-foreground text-sm mb-2">
+                  Drop us a line anytime
+                </p>
+                <a
+                  href="mailto:hello@ouds.com"
+                  class="text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  hello@ouds.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schedule a Call Card -->
+          <div
+            class="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-colors"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center"
+              >
+                <Calendar class="w-6 h-6 text-accent" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-foreground mb-1">
+                  Schedule a Call
+                </h4>
+                <p class="text-muted-foreground text-sm mb-2">
+                  Book a free consultation
+                </p>
+                <a
+                  href="#"
+                  class="text-accent hover:text-accent/80 transition-colors font-medium"
+                >
+                  Book Meeting
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Call Us Card -->
+          <div
+            class="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-colors"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+              >
+                <Phone class="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-foreground mb-1">Call Us</h4>
+                <p class="text-muted-foreground text-sm mb-2">
+                  Mon-Fri 9am-6pm EST
+                </p>
+                <a
+                  href="tel:+1234567890"
+                  class="text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  +1 (234) 567-890
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Response Time -->
+        <div
+          class="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20"
+        >
+          <h4 class="font-semibold text-foreground mb-3">
+            Quick Response Guaranteed
+          </h4>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            We typically respond to all inquiries within 24 hours. For urgent
+            matters, don't hesitate to call us directly during business hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,158 @@
+---
+import oudsFull from "../assets/OUDS_logo.svg";
+
+import { Target, Users, Zap, Award } from "@lucide/astro";
+
+const values = [
+  {
+    icon: Target,
+    title: "Mission-Driven",
+    description:
+      "We're committed to helping businesses grow through innovative digital solutions and cutting-edge technology.",
+  },
+  {
+    icon: Users,
+    title: "Client-Focused",
+    description:
+      "Your success is our priority. We build lasting partnerships through transparent communication and exceptional results.",
+  },
+  {
+    icon: Zap,
+    title: "Innovation First",
+    description:
+      "We stay ahead of industry trends, leveraging the latest technologies to deliver modern, future-proof solutions.",
+  },
+  {
+    icon: Award,
+    title: "Quality Excellence",
+    description:
+      "Every project receives meticulous attention to detail, ensuring the highest standards of quality and performance.",
+  },
+];
+---
+
+<section id="about" class="py-24 bg-secondary/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Content -->
+      <div class="fade-slide-up">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
+        >
+          About
+          <span class="text_design_gradient">OUDS</span>
+        </h2>
+        <div class="space-y-6 text-muted-foreground leading-relaxed">
+          <p class="text-lg">
+            OUDS was founded with a simple yet powerful vision: to bridge the
+            gap between cutting-edge technology and practical business
+            solutions. We believe that every business, regardless of size,
+            deserves access to modern, efficient digital tools.
+          </p>
+          <p>
+            Our team combines years of experience in web development, design,
+            and business strategy to deliver solutions that not only look great
+            but drive real results. From startups to established enterprises,
+            we've helped businesses transform their digital presence and
+            streamline their operations.
+          </p>
+          <p>
+            What sets us apart is our commitment to understanding your unique
+            challenges and crafting tailored solutions that grow with your
+            business. We don't just build websites and tools – we build
+            partnerships that last.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <!-- <div class="grid grid-cols-2 gap-8 mt-12">
+          <div>
+            <div class="text-3xl font-bold text-primary mb-2">5+</div>
+            <div class="text-sm text-muted-foreground">Years of Excellence</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-accent mb-2">50+</div>
+            <div class="text-sm text-muted-foreground">Happy Clients</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-primary mb-2">100+</div>
+            <div class="text-sm text-muted-foreground">Projects Completed</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-accent mb-2">24/7</div>
+            <div class="text-sm text-muted-foreground">
+              Support & Maintenance
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <!-- Values Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 fade-slide-up">
+        {
+          values.map((value) => (
+            <div class="group hover:shadow-lg transition-all duration-300 border focused_items_w_hover_card bg-card/80 backdrop-blur-sm rounded-xl">
+              <div class="p-6">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4 icon_bg">
+                  <value.icon class="w-6 h-6 text-primary" />
+                </div>
+                <h3 class="font-semibold text-foreground mb-2">
+                  {value.title}
+                </h3>
+                <p class="text-sm text-muted-foreground leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Why Choose OUDS -->
+    <div class="mt-20 text-center fade-slide-up">
+      <h3 class="text-2xl md:text-3xl font-bold text-foreground mb-8">
+        Why Choose
+        <span class="text_design_gradient">OUDS</span>?
+      </h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div
+            class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 icon_gradient_bg"
+          >
+            <Zap class="w-8 h-8 text-white" />
+          </div>
+          <h4 class="font-semibold text-foreground mb-3">Modern Practices</h4>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            We use the latest technologies and best practices to ensure your
+            solutions are future-ready and scalable.
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 icon_gradient_bg"
+          >
+            <Users class="w-8 h-8 text-white" />
+          </div>
+          <h4 class="font-semibold text-foreground mb-3">Tailored Solutions</h4>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Every project is unique. We take the time to understand your
+            specific needs and deliver custom solutions.
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 icon_gradient_bg"
+          >
+            <Award class="w-8 h-8 text-white" />
+          </div>
+          <h4 class="font-semibold text-foreground mb-3">Proven Results</h4>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Our track record speaks for itself. We've helped businesses achieve
+            measurable growth and success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,4 +1,6 @@
 ---
+import CallToAction from "./CallToAction.astro";
+
 import { Smartphone, Globe, Zap, Shield, Code2, Palette } from "@lucide/astro";
 
 const services = [
@@ -53,7 +55,7 @@ const extraServices = [
 <section id="services" class="py-24 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
     <!-- Section header -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 transition-transform fade-slide-up">
       <h2 class="text-3xl sm:text-5xl font-heading font-bold text-foreground mb-6">
         Our
         <span
@@ -72,7 +74,7 @@ const extraServices = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((service, index) => (
         <div
-          class="group relative hover:scale-105 hover:-translate-y-1 transition-transform"
+          class="group relative hover:scale-105 hover:-translate-y-1 transition-transform fade-slide-up"
         >
           <div
             class="focused_items_w_hover_card h-full bg-card/50 backdrop-blur-sm border rounded-2xl p-8 
@@ -107,7 +109,7 @@ const extraServices = [
     </div>
 
     <!-- Extra services -->
-    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-transform fade-slide-up">
       {extraServices.map((item, index) => (
         <div
           class="focused_items_w_hover_card backdrop-blur-sm border rounded-xl p-6 text-center 
@@ -121,20 +123,7 @@ const extraServices = [
         </div>
       ))}
     </div>
+    
+    <CallToAction />
   </div>
 </section>
-
-<style>
-  /* fade + slide animation */
-  .fade-slide-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideUp 0.6s ease forwards;
-  }
-  @keyframes fadeSlideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
