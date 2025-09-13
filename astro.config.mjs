@@ -6,6 +6,8 @@ import vercel from "@astrojs/vercel";
 
 import sitemap from "@astrojs/sitemap";
 
+import robotsTxt from "astro-robots-txt";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -14,5 +16,5 @@ export default defineConfig({
 
   adapter: vercel(),
   site: "https://oudsdev.com",
-  integrations: [sitemap()],
+  integrations: [sitemap(), robotsTxt()],
 });
