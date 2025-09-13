@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oudsdev.com/sitemap-index.xml
