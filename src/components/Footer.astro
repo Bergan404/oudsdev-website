@@ -2,14 +2,18 @@
 import oudsFull from "../assets/OUDS_logo.svg";
 import oudsLogo from "../assets/OUDS.svg";
 
-import { Mail, Github, Linkedin, Twitter } from "@lucide/astro";
+import { Mail, Github, Linkedin, Twitter, Instagram } from "@lucide/astro";
 
 const currentYear = new Date().getFullYear();
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/Ouds-dev", label: "GitHub" },
   // { icon: Linkedin, href: "#", label: "LinkedIn" },
-  // { icon: Twitter, href: "#", label: "Twitter" },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/oudsdev?igsh=ZGFqdjd1cTRpYjhw&utm_source=qr",
+    label: "Instagram",
+  },
   { icon: Mail, href: "mailto:admin@oudsdev.com", label: "Email" },
 ];
 
